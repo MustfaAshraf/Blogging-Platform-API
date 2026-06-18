@@ -1,0 +1,221 @@
+{
+  "info": {
+    "_postman_id": "5bddae88-757d-494b-8a82-b3e572e85188",
+    "name": "Meta_Collection",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "38801866",
+    "_collection_link": "https://go.postman.co/collection/38801866-5bddae88-757d-494b-8a82-b3e572e85188?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Auth",
+      "item": [
+        {
+          "name": "register",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\": \"Mustafa\",\r\n    \"email\": \"mustafa@gmail.com\",\r\n    \"password\": \"123456789\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://13.60.246.130:3000/auth/register",
+              "protocol": "http",
+              "host": [
+                "13",
+                "60",
+                "246",
+                "130"
+              ],
+              "port": "3000",
+              "path": [
+                "auth",
+                "register"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "login",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"email\": \"mustafa@gmail.com\",\r\n    \"password\": \"123456789\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://13.60.246.130:3000/auth/login",
+              "protocol": "http",
+              "host": [
+                "13",
+                "60",
+                "246",
+                "130"
+              ],
+              "port": "3000",
+              "path": [
+                "auth",
+                "login"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Posts",
+      "item": [
+        {
+          "name": "create-post",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhMzQzNDgyNTJjZjIxMGJkNzZmMDFjMyIsImlhdCI6MTc4MTgwNjIxNiwiZXhwIjoxNzgxODA3MTE2fQ.RuLASpgzAdlcbDSgoo2roygvepTsnhlZ7iPjzAf5ghY",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"title\": \"A new Post for Testing\",\r\n    \"content\": \"Testing Post Create Endpoint\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://13.60.246.130:3000/posts",
+              "protocol": "http",
+              "host": [
+                "13",
+                "60",
+                "246",
+                "130"
+              ],
+              "port": "3000",
+              "path": [
+                "posts"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "all-posts",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://13.60.246.130:3000/posts",
+              "protocol": "http",
+              "host": [
+                "13",
+                "60",
+                "246",
+                "130"
+              ],
+              "port": "3000",
+              "path": [
+                "posts"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "update-post",
+          "request": {
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhMzQzNDgyNTJjZjIxMGJkNzZmMDFjMyIsImlhdCI6MTc4MTgwNjIxNiwiZXhwIjoxNzgxODA3MTE2fQ.RuLASpgzAdlcbDSgoo2roygvepTsnhlZ7iPjzAf5ghY",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"title\": \"A fake title\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://13.60.246.130:3000/posts/6a34351652cf210bd76f01c4",
+              "protocol": "http",
+              "host": [
+                "13",
+                "60",
+                "246",
+                "130"
+              ],
+              "port": "3000",
+              "path": [
+                "posts",
+                "6a34351652cf210bd76f01c4"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "delete-post",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhMzQzNDgyNTJjZjIxMGJkNzZmMDFjMyIsImlhdCI6MTc4MTgwNjIxNiwiZXhwIjoxNzgxODA3MTE2fQ.RuLASpgzAdlcbDSgoo2roygvepTsnhlZ7iPjzAf5ghY",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "http://13.60.246.130:3000/posts/6a34351652cf210bd76f01c4",
+              "protocol": "http",
+              "host": [
+                "13",
+                "60",
+                "246",
+                "130"
+              ],
+              "port": "3000",
+              "path": [
+                "posts",
+                "6a34351652cf210bd76f01c4"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "supabase_service_role_api_key_1a7n",
+      "secret": true
+    },
+    {
+      "key": "bearer_token_1dd9",
+      "secret": true
+    }
+  ]
+}
