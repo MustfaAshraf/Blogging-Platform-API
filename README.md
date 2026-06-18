@@ -2,12 +2,18 @@
 
 A robust, secure, and scalable RESTful API for a personal blogging platform. This backend allows users to securely register, log in, and manage their blog posts using JWT authentication.
 
+## 🌍 Live Demo & Deployment
+*   **Live API Base URL:** `http://13.60.246.130:3000`
+*   **Postman Collection:** A fully configured Postman Collection is included in the root of this repository (`Meta_Blog_Postman_Collection.json`) for easy API testing.
+*   **Infrastructure:** The application is manually deployed on an **AWS EC2** instance, utilizing **PM2** for continuous process management and **MongoDB Atlas** for the cloud database.
+
 ## 🚀 Tech Stack
 *   **Runtime:** Node.js
 *   **Framework:** Express.js
-*   **Database:** MongoDB & Mongoose
+*   **Database:** MongoDB Atlas & Mongoose
 *   **Security:** bcrypt (Password Hashing), jsonwebtoken (JWT Auth)
 *   **Validation:** Joi (Request body validation)
+*   **Deployment:** AWS EC2, PM2
 
 ## 🗄️ Database Choice & Rationale
 I chose **MongoDB (NoSQL)** with **Mongoose** for this project. 
@@ -76,3 +82,9 @@ JWT_REFRESH_SECRET=your_super_secret_refresh_key
   ```js
   post.author.toString() === req.user._id.toString();
   ```
+
+- **Global Error Handling:** Centralized middleware catches invalid endpoints (404) and unexpected server crashes (500), ensuring the API always returns formatted JSON.
+
+## 🔮 Future Improvements
+
+Currently, the system uses a single refresh token string per user. For a highly scalable production environment, I would refactor the User model to store an array of refresh tokens '[{ token, expiresAt }]' to support simultaneous multi-device logins. I would also implement a CI/CD pipeline via GitHub Actions to automate deployments to the AWS EC2 server.
